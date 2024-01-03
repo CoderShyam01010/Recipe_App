@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    background-color: rgb(221, 55, 55);
+    color: white;
+}
+header nav{
+   background-color: rgb(162, 75, 14);
+   
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;/*whose z-index is more that text is upper visible*/
+}
+
+
+header nav h1{
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing:2px;
+}
+header nav form{
+    display: flex;
+    justify-content: center;
+}
+form input[type="text"]{
+    flex-grow: 1;
+    margin-right: 10px;
+}
+form input[type="text"] , button[type="submit"]{
+   border: none;
+   font-size: 14px;
+   padding: 10px;
+   border-radius: 6px;
+}
+form  button[type="submit"]{
+    background-color: rgb(96, 175, 17);
+    color:white;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+form  button[type="submit"]:hover{
+    background-color:rgb(120, 193, 47) ;
+}
+
+/* main section */
+
+.recipe_Container img{
+    height:300px;
+    width: 300px;
+    border-radius: 50%;
+}
+.recipe_Container{
+    text-align: center;
+    margin-top: 20px;
+    display: grid;
+    grid-gap: 40px;
+    width: 80%;
+    margin: 10px auto;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px ,1fr));
+}
+.recipe{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(78, 73, 73, 0.1), -5px -5px 10px rgba(34, 34, 34, 0.5);
+    cursor: pointer;
+    max-width: 300px;
+    transition: transform 0.3 ease-in-out;
+    
+}
+.recipe:hover{
+    transform: scale(1.03);
+}
+.recipe img{
+    height: 300px;
+}
+.recipe h3{
+    font-size: 24px;
+    margin-block: 5px;
+}
+.recipe p{
+    font-size: 20px;
+    color:#4a4a4a ;
+    margin: 5px 0;
+}
+.recipe span{
+    font-weight: 600;
+}
+/*recipe ingredient view btn*/
+.viewBtn{
+    padding: 10px;
+    margin: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: rgb(203, 178, 16);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.2s ease-in-out;
+}
+.viewBtn:hover,.recipe-close-button:hover{
+    background-color: rgb(228, 205, 49);
+}
+
+.recipe-details{
+    display: none;
+    background-color: rgb(200, 105, 37);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 60%;
+    padding: 30px;
+    font-size: 15px;
+    
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50% , -50%);
+    border-radius: 12px;
+    transition: ease-in-out;
+    overflow-y: scroll;
+}
+.recipeName{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration:underline;
+    margin-bottom:20px;
+    line-height: 30px;
+}
+.ingredientList li{
+    margin: 10px 20px 20px;
+}
+.recipeInstructions p{
+    line-height: 30px;
+    white-space: pre-line;/*if there is any whitespace then next word came in the next line*/
+    font-weight: 500;
+}
+.recipe-close-button{
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: rgb(203, 178, 16);
+    color: #fff;
+
+    /*below linew are written to put the cross icon in the right*/
+    position: absolute;
+    top: 20px;
+    right:20px;
+    
+}
+
+
+/* i don't add scrollbar because it came as default */
+
+
+/* navbar responsive */
+
+@media screen and (max-width:600px){
+    header nav{
+        flex-direction: column;
+    }
+    header nav form{
+        width: 80%;
+        margin-top: 20px;
+    }
+}
